@@ -1,0 +1,32 @@
+Database Design
+
+* Product
+-id (productId)
+-name
+-dateImport
+-modelId
+-impricePrice
+-color
+------------------------
+
+* Brand
+-id
+-name
+
+-------------------------
+*Model
+- id
+- name
+- brandId
+------------------------
+* Sale
+-id
+-saleDate
+-------------
+Entity : store in db
+repository : database communication(save,select,updaet)
+service:bussiness logic layer
+controller:API endpoin
+
+
+
