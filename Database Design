@@ -1,0 +1,39 @@
+Database Design
+
+* Product
+-id (productId)
+-name
+-dateImport
+-modelId
+-impricePrice
+-color
+------------------------vcl
+
+* Brand
+-id
+-name
+
+-------------------------
+*Model
+- id
+- name
+- brandId
+------------------------
+* Sale
+-id
+-saleDate
+-------------
+Entity : store in db
+repository : database communication(save,select,updaet)
+service:bussiness logic layer
+controller:API endpoin
+
+* Method Link
+- POST : brands(Create brand)
+- GET: brands/2 (Get one brand by id)
+- GET: brands(Get list of brands)
+- PUT: brands/1(Update one brand by id)
+- DELETE : brand/1(Delete brand where id=1)
+- DELETE : brand(Delete all brand)
+
+
