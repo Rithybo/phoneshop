@@ -4,8 +4,8 @@ import org.springframework.data.domain.PageRequest;
 
 
 public interface PageUtil {
-	int DEFAULT_PAGE_LIMIT = 2;
-	int DEFAULT_PAGE_NUMBER = 1;
+	int DEFAULT_PAGE_LIMIT = 10;
+	int DEFAULT_PAGE_NUMBER = 2;
 	String PAGE_LIMIT = "_limit";
 	String PAGE_NUMBER = "_page";
 	

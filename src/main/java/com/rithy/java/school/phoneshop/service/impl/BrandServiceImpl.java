@@ -64,7 +64,7 @@ public class BrandServiceImpl implements BrandService{
 	@Override
 	public Page<Brand> getBrands(Map<String, String> params) {
 	 	BrandFilter brandFilter = new BrandFilter();
-		
+	 
 		if(params.containsKey("name")) { //access filter from key
 			String name = params.get("name");
 			brandFilter.setName(name);
