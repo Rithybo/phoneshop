@@ -13,16 +13,3 @@ Unit Test
 Integration Test 
 -----------------------
 H2 database benefit
-server:
-  port: 8081
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/phoneshop_rithy
-    username: phoneshop_rithy
-    password: 1234qwer
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update

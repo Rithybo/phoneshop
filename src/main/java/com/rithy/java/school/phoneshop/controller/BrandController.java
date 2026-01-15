@@ -14,7 +14,6 @@ import com.rithy.java.school.phoneshop.entity.Brand;
 import com.rithy.java.school.phoneshop.mapper.BrandMapper;
 import com.rithy.java.school.phoneshop.service.BrandService;
 import com.rithy.java.school.phoneshop.util.MapperBrand;
-
 @RestController //Mean for responbody
 @RequestMapping("brands")
 public class BrandController {
@@ -27,6 +26,7 @@ public class BrandController {
 		brand = brandService.create(brand);
 		return ResponseEntity.ok(MapperBrand.toBrandDTO(brand));
 	}
+	
 	
 	
 	@GetMapping("{id}")

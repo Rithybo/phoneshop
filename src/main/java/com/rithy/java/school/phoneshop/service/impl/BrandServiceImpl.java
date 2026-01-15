@@ -21,10 +21,16 @@ import com.rithy.java.school.phoneshop.spac.BrandFilter;
 import com.rithy.java.school.phoneshop.spac.BrandSpac;
 import com.rithy.java.school.phoneshop.util.PageUtil;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class BrandServiceImpl implements BrandService{
 	@Autowired
-	private BrandRepository brandRepository;
+	
+	private final BrandRepository brandRepository;
 		
 	@Override
 	public Brand create(Brand brand) {
@@ -40,14 +46,16 @@ public class BrandServiceImpl implements BrandService{
 		} 
 		throw new HttpClientErrorException(HttpStatus.NOT_FOUND,"Brand with id = %d not found".formatted(id));
 		 */
-		return brandRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Brand", id));	
+		 return brandRepository.findById(id) //if brandReposity have value statement .orEleseThrow not Excecute
+				 .orElseThrow(() -> new ResourceNotFoundException("Brand", id));
+		 
 	}
 	@Override
 	public Brand update(Integer id, Brand brandUpdaet) {
 		// Call ID have or not 
 		Brand brand = getById(id);
 		//Set name.get name
-		brand.setName(brandUpdaet.getName()); // @TODO improve updaet
+		brand.setName(brandUpdaet.getName()); // @TODO improve update
 		// return save 
 		return brandRepository.save(brand);
 	}
@@ -87,6 +95,7 @@ public class BrandServiceImpl implements BrandService{
 		Pageable pageable = PageUtil.getPageable(pageNumber, pageLimit);
 		Page<Brand> page = brandRepository.findAll(brandSpac, pageable);
 		 return page;
+		 
 	}
 
 
