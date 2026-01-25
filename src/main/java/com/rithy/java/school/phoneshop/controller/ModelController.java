@@ -5,26 +5,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.rithy.java.school.phoneshop.dto.ModelDTO;
 import com.rithy.java.school.phoneshop.entity.Model;
+import com.rithy.java.school.phoneshop.mapper.ModelMapper;
 import com.rithy.java.school.phoneshop.service.ModelService;
-import com.rithy.java.school.phoneshop.util.MapperModel;
 
-@RestController //Mean for responbody
-@RequestMapping("models")
+
+import lombok.RequiredArgsConstructor;
+//Mean for responsbody
+@RestController 
+@RequestMapping("/models")
+@RequiredArgsConstructor
 public class ModelController {
 	@Autowired
-	private ModelService modelService;
-	@PostMapping
-	public ResponseEntity<?> create(@RequestBody ModelDTO modelDTO) {
-		Model model = MapperModel.toModel(modelDTO);
-		model = modelService.create(model);
-		return ResponseEntity.ok(MapperModel.toModelDTO(model));
-		
-	}
-	
-	@GetMapping("{id}")
-	public ResponseEntity<?> getOneBrand(@PathVariable("id") Integer modInteger){
-		Model model = modelService.getById(modInteger);
-		return ResponseEntity.ok(MapperModel.toModelDTO(model));
+	private final ModelService modelService;
+	private final ModelMapper modelMapper;
+	@PostMapping //for get request
+	public ResponseEntity<?> create(@RequestBody ModelDTO modelDTO) { //handler request or response
+		Model model = modelService.save(modelDTO);
+		return ResponseEntity.ok(modelMapper.toModelDTO(model));
 	}
 	
 }

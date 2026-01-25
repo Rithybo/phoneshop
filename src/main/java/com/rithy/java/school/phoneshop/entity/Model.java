@@ -1,5 +1,4 @@
 package com.rithy.java.school.phoneshop.entity;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +20,6 @@ public class Model {
 	@Column(name="model_name")
 	private String name;
 	@ManyToOne
-	@JoinColumn(name="brandId")
+	@JoinColumn(name="brand_id")
 	private Brand brand;
 }

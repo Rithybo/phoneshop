@@ -14,6 +14,5 @@ public interface BrandService {
 //	List<Brand> getBrands();
 //	List<Brand> getBrands(String name);
 	Page<Brand> getBrands(Map<String, String> params);
-//	Brand delBrand(Integer id);
 	
 }

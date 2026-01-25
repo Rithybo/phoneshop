@@ -13,3 +13,33 @@ Unit Test
 Integration Test 
 -----------------------
 H2 database benefit
+===============================
+Add Model Entity
+brand = Apple
+model :
+iPhone1
+iPhone2
+CRUD :Model
+ModelDTO
+{
+	name=string
+	title:string
+	list[];
+}
+ModelRequestDTO
+{
+ brandId:int
+ name:string
+}
+ModelResponseDTO
+{
+	brandId:Int
+	name:string
+	id:int
+}
+-----------------------------
+brand/Apple pls help make api find brand apple have many model 
+iPhone 1
+iPhone 2
+iPhone 3
+iPhone 4
