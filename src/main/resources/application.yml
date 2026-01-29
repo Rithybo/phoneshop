@@ -1,5 +1,6 @@
 server:
   port: 8081
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/phoneshop_rithy
@@ -11,3 +12,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
