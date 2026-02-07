@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: RITHY_001
+      author: rithy.bo@gmail.com
+      changes:
+        - createTable:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: brand_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+
+        - createTable:
+            tableName: models
+            columns:
+              - column:
+                  name: model_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: model_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brand_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    referencedTableName: brands
+                    referencedColumnNames: brand_id
+                    foreignKeyName: fk_models_brands

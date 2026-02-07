@@ -8,4 +8,5 @@ public interface ModelService {
 	
 	Model save(ModelDTO dto);
 	List<Model> getByBrand(Integer brandId);
+	
 }

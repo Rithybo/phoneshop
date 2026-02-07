@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: RITHY_002_LOAD_BRANDS
+      author: rithy
+      runOnChange: true
+      changes:
+        - loadUpdateData:
+            tableName: brands
+            file: db/data/002_brand.csv
+            primaryKey: brand_id
+            columns:
+              - column:
+                  name: brand_id
+                  type: NUMERIC
+              - column:
+                  name: brand_name
+                  type: STRING

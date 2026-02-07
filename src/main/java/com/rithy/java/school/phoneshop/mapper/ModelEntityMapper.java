@@ -12,7 +12,7 @@ import com.rithy.java.school.phoneshop.service.BrandService;
 @Mapper( componentModel = "spring", uses = {BrandService.class})
 public interface ModelEntityMapper {
 	ModelEntityMapper  INSTANCE = Mappers.getMapper(ModelEntityMapper.class);
-	@Mapping(target = "brand", source = "brandId") //Mapping manaul
+	@Mapping(target = "brand", source = "brandId") 
 	Model toModel(ModelDTO dto);
 	
 	@Mapping(target = "brandId", source = "brand.id")

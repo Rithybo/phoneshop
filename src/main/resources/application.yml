@@ -1,18 +1,16 @@
 server:
   port: 8081
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/phoneshop_rithy
     username: phoneshop_rithy
     password: 1234qwer
   jpa:
+    hibernate:
+      ddl-auto: update # Note: Often set to 'validate' or 'none' when using Liquibase
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
-
-#  mvc:
-#    pathmatch:
-#      matching-strategy: ant_path_matcher
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true

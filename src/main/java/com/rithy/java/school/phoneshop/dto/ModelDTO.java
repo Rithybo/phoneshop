@@ -2,7 +2,8 @@ package com.rithy.java.school.phoneshop.dto;
 import lombok.Data;
 @Data
 public class ModelDTO {
-	private String name;
 	private Integer brandId;
+	private String name;
+	
 }
 
